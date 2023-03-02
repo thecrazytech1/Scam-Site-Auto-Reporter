@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Scam Site Destroyer</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div class="centered">
+      <h1>Report Scam URLs</h1>
+
+      <form id="form" method="post">
+        <label for="url">URL:</label>
+        <span>*You must put either http or https</span>
+        <input type="text" name="url" id="url" required />
+        <br />
+        <label for="url">Email:</label>
+        <input type="text" name="email" id="email" required />
+        <br />
+        <!-- make a dropdown to select the category of what they want to report, for example like phishing -->
+        <label for="categoryl">Category:</label>
+        <select name="category" id="category" required>
+          <option value="phishing">Phishing</option>
+          <option value="malware">Malware</option>
+          <option value="scam">Scam</option>
+          <option value="other">Other</option>
+        </select>
+        <br />
+        <label for="reason">Reason for Report:</label>
+        <textarea name="reason" id="reason" required></textarea>
+        <br />
+        <input
+          type="submit"
+          value="Submit Report"
+          onclick="submitInfo(event)"
+        />
+      </form>
+    </div>
+  </body>
+</html>

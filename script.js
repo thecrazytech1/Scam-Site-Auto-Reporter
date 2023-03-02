@@ -21,6 +21,7 @@ function submitInfo(event) {
     reason: reason,
   };
 
+  alert("Thank you for your submission");
   console.log(data);
 }
 

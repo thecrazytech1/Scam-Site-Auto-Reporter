@@ -1,8 +1,3 @@
-var userAgent = require("user-agents");
-const puppeteer = require("puppeteer-extra");
-const StealthPlugin = require("puppeteer-extra-plugin-stealth");
-puppeteer.use(StealthPlugin());
-
 function submitInfo(event) {
   event.preventDefault();
 
@@ -26,8 +21,17 @@ function submitInfo(event) {
     reason: reason,
   };
 
-  alert("Thank you for your submission");
-  console.log(data);
+  // send data to server
+  fetch("https://Scam-Reporter.chrissquartz.repl.co/submit", {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => console.log(data))
+    .catch((error) => console.error(error));
 }
 
 function validateEmail(email) {

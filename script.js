@@ -1,3 +1,8 @@
+var userAgent = require("user-agents");
+const puppeteer = require("puppeteer-extra");
+const StealthPlugin = require("puppeteer-extra-plugin-stealth");
+puppeteer.use(StealthPlugin());
+
 function submitInfo(event) {
   event.preventDefault();
 

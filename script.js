@@ -12,7 +12,6 @@ function submitInfo(event) {
 
   //   check if email is valid
   if (!validateEmail(email)) return alert("Please enter a valid email");
-  if (!validateUrl(url)) return alert("Please enter a valid url");
 
   var data = {
     email: email,
@@ -37,9 +36,4 @@ function submitInfo(event) {
 function validateEmail(email) {
   var re = /\S+@\S+\.\S+/;
   return re.test(email);
-}
-
-function validateUrl(url) {
-  var re = /^(http|https):\/\/[^ "]+$/;
-  return re.test(url);
 }
